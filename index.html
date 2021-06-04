@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div id="app">
         <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -15,10 +16,10 @@
                 <circle cx="1" cy="1" r="1" />
             </symbol>
             <symbol id="front">
-                <rect x="10" y="10" width="15" height="15"/>
+                <rect x="10" y="10" width="15" height="15" />
             </symbol>
             <symbol id="back">
-                <rect x="10" y="10" width="15" height="15" rx="2" ry="2"/>
+                <rect x="10" y="10" width="15" height="15" rx="2" ry="2" />
             </symbol>
         </svg>
         <header class="header">
@@ -158,9 +159,11 @@
                     <div class="item">
                         <h3 class="item__title">Django</h3>
                         <img src='img/item-7.png' alt="Django">
-                        <p class="item__description">Django — это ведущая серверная среда с открытым исходным кодом, 
-                            основанная на языке программирования Python. Он следует шаблону контроллера представления модели (MVC). 
-                            Django подходит для разработки сложных и многофункциональных веб-сайтов на основе баз данных.</p>
+                        <p class="item__description">Django — это ведущая серверная среда с открытым исходным кодом,
+                            основанная на языке программирования Python. Он следует шаблону контроллера представления
+                            модели (MVC).
+                            Django подходит для разработки сложных и многофункциональных веб-сайтов на основе баз
+                            данных.</p>
                         <p class="item__benefits">Преимущества</p>
                         <ul class="item__list">
                             <li>Быстрая структура</li>
@@ -172,11 +175,15 @@
                     <div class="item">
                         <h3 class="item__title">Laravel</h3>
                         <img src='img/item-8.png' alt="Laravel">
-                        <p class="item__description">Lavarel — это веб-фреймворк PHP с открытым исходным кодом для разработки 
-                            веб-приложений на основе Symfony, которые следуют архитектуре модель – представление – контроллер (MVC).
-                            Он предлагает модульную упаковочную систему со специальным менеджером зависимостей. 
-                            Laravel также предоставляет своим пользователям несколько способов доступа к реляционным базам данных,
-                            а также утилит для обслуживания и развертывания приложений. Laravel имеет лицензию MIT и исходный код 
+                        <p class="item__description">Lavarel — это веб-фреймворк PHP с открытым исходным кодом для
+                            разработки
+                            веб-приложений на основе Symfony, которые следуют архитектуре модель – представление –
+                            контроллер (MVC).
+                            Он предлагает модульную упаковочную систему со специальным менеджером зависимостей.
+                            Laravel также предоставляет своим пользователям несколько способов доступа к реляционным
+                            базам данных,
+                            а также утилит для обслуживания и развертывания приложений. Laravel имеет лицензию MIT и
+                            исходный код
                             размещен на GitHub.</p>
                         <p class="item__benefits">Преимущества</p>
                         <ul class="item__list">
@@ -190,9 +197,12 @@
                     <div class="item">
                         <h3 class="item__title">Ruby on Rails</h3>
                         <img src='img/item-9.png' alt="Ruby on Rails">
-                        <p class="item__description">Ruby on Rails, также известный как Rails, представляет собой платформу 
-                            серверных веб-приложений на основе Ruby с лицензией MIT. Rails — это среда MVC, предлагающая структуры
-                            базы данных по умолчанию, веб-страницы и веб-службы. Ruby on Rails продвигает использование веб-стандартов,
+                        <p class="item__description">Ruby on Rails, также известный как Rails, представляет собой
+                            платформу
+                            серверных веб-приложений на основе Ruby с лицензией MIT. Rails — это среда MVC, предлагающая
+                            структуры
+                            базы данных по умолчанию, веб-страницы и веб-службы. Ruby on Rails продвигает использование
+                            веб-стандартов,
                             таких как XML или JSON, для передачи данных и CSS, JavaScript и HTML для взаимодействия.</p>
                         <p class="item__benefits">Преимущества</p>
                         <ul class="item__list">
@@ -227,12 +237,18 @@
                     <h2>Изучить ------- {{ needDoList.length }}</h2>
                     <div class="item" v-for="(mask, index) in needDoList" :key="mask.id">
                         <h3 class="item__title">{{ mask.title }}</h3>
-                        <svg width="15" height="15" v-if="mask.category === 'css'"><use xlink:href="#css" fill='blue' /></svg>
-                        <svg width="15" height="15" v-if="mask.category === 'front'"><use xlink:href="#front" fill='red' /></svg>
-                        <svg width="15" height="15" v-if="mask.category === 'back'"><use xlink:href="#back" fill='orange' /></svg>
+                        <svg width="15" height="15" v-if="mask.category === 'css'">
+                            <use xlink:href="#css" fill='blue' />
+                        </svg>
+                        <svg width="15" height="15" v-if="mask.category === 'front'">
+                            <use xlink:href="#front" fill='red' />
+                        </svg>
+                        <svg width="15" height="15" v-if="mask.category === 'back'">
+                            <use xlink:href="#back" fill='orange' />
+                        </svg>
                         <p class="item__description">{{ mask.description }}</p>
                         <p class="item__hour">{{ mask.hour }}</p>
-                        <input class="item__check" type="checkbox" v-on:change="doCheck(index, 'need')" >
+                        <input class="item__check" type="checkbox" v-on:change="doCheck(index, 'need')">
                         <button class="item__button" v-on:click="removeMask(index, 'need')">Удалить</button>
                     </div>
                 </section>
@@ -240,9 +256,15 @@
                     <h2>Изученные ------- {{ completeList.length }}</h2>
                     <div class="item" v-for="(mask, index) in completeList" :key="mask.id">
                         <h3 class="item__title">{{ mask.title }}</h3>
-                        <svg width="15" height="15" v-if="mask.category === 'css'"><use xlink:href="#css" fill='blue' /></svg>
-                        <svg width="15" height="15" v-if="mask.category === 'front'"><use xlink:href="#front" fill='red' /></svg>
-                        <svg width="15" height="15" v-if="mask.category === 'back'"><use xlink:href="#back" fill='orange' /></svg>
+                        <svg width="15" height="15" v-if="mask.category === 'css'">
+                            <use xlink:href="#css" fill='blue' />
+                        </svg>
+                        <svg width="15" height="15" v-if="mask.category === 'front'">
+                            <use xlink:href="#front" fill='red' />
+                        </svg>
+                        <svg width="15" height="15" v-if="mask.category === 'back'">
+                            <use xlink:href="#back" fill='orange' />
+                        </svg>
                         <p class="item__description">{{ mask.description }}</p>
                         <p class="item__hour">{{ mask.hour }}</p>
                         <input class="item__check" type="checkbox" v-on:change="doCheck(index, 'complete')" checked>
@@ -252,7 +274,7 @@
             </div>
         </main>
         <footer>
-           <p>Воробьёв Владислав Владимирович, 201-321, 04.06.2021</p> 
+            <p>Воробьёв Владислав Владимирович, 201-321, 04.06.2021</p>
         </footer>
     </div>
     <script src="https://unpkg.com/vue@next"></script>

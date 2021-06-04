@@ -3,20 +3,23 @@
     --color-secondary: #FFE66D;
     --color-accent: #FF6B6B;
     --font-color: #1A535C;
-  }
-  .theme-dark {
+}
+
+.theme-dark {
     --color-primary: #1A535C;
     --color-secondary: #4ECDC4;
     --color-accent: #FFE66D;
     --font-color: #F7FFF7;
-  }
-  @mixin text {
+}
+
+@mixin text {
     font-family: 'Brygada 1918', serif;
     font-style: normal;
     text-decoration: none;
     font-weight: normal;
     color: var(--font-color);
 }
+
 @mixin heading {
     font-family: 'Brygada 1918', serif;
     font-style: normal;
@@ -24,7 +27,8 @@
     font-weight: bold;
     color: var(--font-color);
 }
-@mixin list{
+
+@mixin list {
     list-style-type: square;
     font-family: 'Brygada 1918', serif;
     font-style: normal;
@@ -32,11 +36,12 @@
     font-weight: normal;
     color: var(--color-accent);
 }
-@mixin form{
+
+@mixin form {
     background: var(--color-secondary);
     color: var(--font-color);
     border-radius: 10px;
-    border:none;
+    border: none;
     outline: none;
     padding: 15px;
 }

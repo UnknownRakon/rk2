@@ -63,7 +63,8 @@
         @include b.text;
         margin-bottom: 10px;
     }
-    &__button{
+
+    &__button {
         height: 40px;
         align-self: center;
         @include b.text;
@@ -72,10 +73,12 @@
         border: none;
         padding: 5px 20px;
     }
-    &__check{
+
+    &__check {
         margin-bottom: 10px;
     }
-    svg{
+
+    svg {
         margin-bottom: 20px;
     }
 }
@@ -114,17 +117,19 @@
         border: none;
         padding: 5px 20px;
         border-radius: 150px;
-        &:hover{
+
+        &:hover {
             animation: button 0.5s forwards ease-in-out;
         }
     }
 }
+
 @keyframes button {
     from {
         transform: scale(1);
-      }
-    
-      to {
+    }
+
+    to {
         transform: scale(1.5);
-      }
+    }
 }
