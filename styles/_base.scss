@@ -32,3 +32,11 @@
     font-weight: normal;
     color: var(--color-accent);
 }
+@mixin form{
+    background: var(--color-secondary);
+    color: var(--font-color);
+    border-radius: 10px;
+    border:none;
+    outline: none;
+    padding: 15px;
+}

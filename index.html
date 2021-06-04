@@ -8,9 +8,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <div id="app">
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            <symbol id="css" width="15" height="15" viewBox="0 0 2 2">
+                <circle cx="1" cy="1" r="1" />
+            </symbol>
+            <symbol id="front">
+                <rect x="10" y="10" width="15" height="15"/>
+            </symbol>
+            <symbol id="back">
+                <rect x="10" y="10" width="15" height="15" rx="2" ry="2"/>
+            </symbol>
+        </svg>
         <header class="header">
             <div class="container container_header">
                 <div class="header__logo">
@@ -195,8 +205,55 @@
                         </ul>
                     </div>
                 </section>
+                <section id='2'>
+                    <h2>Добавить в мой список</h2>
+                    <div class="form">
+                        <label for="title">Название</label>
+                        <input id="title" type="text" v-bind:value="title" v-on:input="titleFun" placeholder="Название">
+                        <select v-bind:value="category" v-on:change="categoryFun">
+                            <option selected disabled>Выберите категорию</option>
+                            <option value="css">CSS</option>
+                            <option value="front">Front-end</option>
+                            <option value="back">Back-end</option>
+                        </select>
+                        <label for="description">Полезная информация</label>
+                        <textarea id="description" v-bind:value="description" v-on:input="descriptionFun"></textarea>
+                        <label for="hour">Часов на изучение:</label>
+                        <input id="hout" type="number" v-bind:value="hour" v-on:input="hourFun">
+                        <button class="btn" v-on:click="addTask">Добавить</button>
+                    </div>
+                </section>
+                <section id='3'>
+                    <h2>Изучить ------- {{ needDoList.length }}</h2>
+                    <div class="item" v-for="(mask, index) in needDoList" :key="mask.id">
+                        <h3 class="item__title">{{ mask.title }}</h3>
+                        <svg width="15" height="15" v-if="mask.category === 'css'"><use xlink:href="#css" fill='blue' /></svg>
+                        <svg width="15" height="15" v-if="mask.category === 'front'"><use xlink:href="#front" fill='red' /></svg>
+                        <svg width="15" height="15" v-if="mask.category === 'back'"><use xlink:href="#back" fill='orange' /></svg>
+                        <p class="item__description">{{ mask.description }}</p>
+                        <p class="item__hour">{{ mask.hour }}</p>
+                        <input class="item__check" type="checkbox" v-on:change="doCheck(index, 'need')" >
+                        <button class="item__button" v-on:click="removeMask(index, 'need')">Удалить</button>
+                    </div>
+                </section>
+                <section id='4'>
+                    <h2>Изученные ------- {{ completeList.length }}</h2>
+                    <div class="item" v-for="(mask, index) in completeList" :key="mask.id">
+                        <h3 class="item__title">{{ mask.title }}</h3>
+                        <svg width="15" height="15" v-if="mask.category === 'css'"><use xlink:href="#css" fill='blue' /></svg>
+                        <svg width="15" height="15" v-if="mask.category === 'front'"><use xlink:href="#front" fill='red' /></svg>
+                        <svg width="15" height="15" v-if="mask.category === 'back'"><use xlink:href="#back" fill='orange' /></svg>
+                        <p class="item__description">{{ mask.description }}</p>
+                        <p class="item__hour">{{ mask.hour }}</p>
+                        <input class="item__check" type="checkbox" v-on:change="doCheck(index, 'complete')" checked>
+                        <button class="item__button" v-on:click="removeMask(index, 'complete')">Удалить</button>
+                    </div>
+                </section>
             </div>
         </main>
+        <footer>
+           <p>Воробьёв Владислав Владимирович, 201-321, 04.06.2021</p> 
+        </footer>
     </div>
     <script src="https://unpkg.com/vue@next"></script>
     <script src="app.js"></script>

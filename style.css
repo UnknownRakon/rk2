@@ -168,7 +168,100 @@ main {
   margin-bottom: 10px;
   width: 100%;
 }
+.item__hour {
+  font-family: "Brygada 1918", serif;
+  font-style: normal;
+  text-decoration: none;
+  font-weight: normal;
+  color: var(--font-color);
+  margin-bottom: 10px;
+}
+.item__button {
+  height: 40px;
+  align-self: center;
+  font-family: "Brygada 1918", serif;
+  font-style: normal;
+  text-decoration: none;
+  font-weight: normal;
+  color: var(--font-color);
+  background: var(--color-accent);
+  outline: none;
+  border: none;
+  padding: 5px 20px;
+}
+.item__check {
+  margin-bottom: 10px;
+}
+.item svg {
+  margin-bottom: 20px;
+}
 
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 400px;
+}
+.form input {
+  background: var(--color-secondary);
+  color: var(--font-color);
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding: 15px;
+}
+.form select {
+  background: var(--color-secondary);
+  color: var(--font-color);
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding: 15px;
+}
+.form textarea {
+  background: var(--color-secondary);
+  color: var(--font-color);
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding: 15px;
+  height: 50px;
+  resize: none;
+}
+.form label {
+  font-family: "Brygada 1918", serif;
+  font-style: normal;
+  text-decoration: none;
+  font-weight: normal;
+  color: var(--font-color);
+}
+.form button {
+  height: 40px;
+  align-self: center;
+  font-family: "Brygada 1918", serif;
+  font-style: normal;
+  text-decoration: none;
+  font-weight: normal;
+  color: var(--font-color);
+  background: var(--color-accent);
+  outline: none;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 150px;
+}
+.form button:hover {
+  animation: button 0.5s forwards ease-in-out;
+}
+
+@keyframes button {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.5);
+  }
+}
 @media (max-width: 691px) {
   .container {
     width: 95%;
