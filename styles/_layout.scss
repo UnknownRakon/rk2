@@ -1,27 +1,37 @@
 @use '_base'as b;
-.header{
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.header {
     width: 100%;
     background: var(--color-secondary);
 
-    &__logo{
-        flex:1;
+    &__logo {
+        flex: 1;
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    &__menu{
-        flex:10;
-        ul{
+
+    &__menu {
+        flex: 10;
+
+        ul {
             display: flex;
             flex-direction: row;
             justify-content: space-around;
             align-items: center;
             height: 100%;
         }
-        li{
+
+        li {
             list-style: none;
         }
-        a{
+
+        a {
             @include b.text;
             height: 30px;
             width: 40px;
@@ -30,8 +40,9 @@
             word-wrap: none;
         }
     }
-    &__themeButton{
-        flex:1;
+
+    &__themeButton {
+        flex: 1;
         height: 20%;
         align-self: center;
         background: var(--font-color);
@@ -41,18 +52,35 @@
         border-radius: 150px;
         padding: 5px 20px;
 
-        &:hover{
+        &:hover {
             background: var(--color-accent);
             color: var(--font-color);
         }
     }
 }
-.container{
+
+.container {
     width: 65%;
     margin: 0 auto;
-    &_header{
+
+    &_header {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
     }
+
+    &_main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        section {
+            width: 100%;
+        }
+    }
+}
+
+main {
+    width: 100%;
+    background: var(--color-primary);
 }

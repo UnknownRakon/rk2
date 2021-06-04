@@ -17,3 +17,18 @@
     font-weight: normal;
     color: var(--font-color);
 }
+@mixin heading {
+    font-family: 'Brygada 1918', serif;
+    font-style: normal;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--font-color);
+}
+@mixin list{
+    list-style-type: square;
+    font-family: 'Brygada 1918', serif;
+    font-style: normal;
+    text-decoration: none;
+    font-weight: normal;
+    color: var(--color-accent);
+}
