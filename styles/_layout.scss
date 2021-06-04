@@ -92,4 +92,5 @@ footer {
     text-align: center;
     @include b.text;
     background:var(--color-secondary);
+    width: 100%;
 }
