@@ -247,7 +247,7 @@
                             <use xlink:href="#back" fill='orange' />
                         </svg>
                         <p class="item__description">{{ mask.description }}</p>
-                        <p class="item__hour">{{ mask.hour }}</p>
+                        <p class="item__hour">{{ mask.hour }} часов</p>
                         <input class="item__check" type="checkbox" v-on:change="doCheck(index, 'need')">
                         <button class="item__button" v-on:click="removeMask(index, 'need')">Удалить</button>
                     </div>
@@ -266,7 +266,7 @@
                             <use xlink:href="#back" fill='orange' />
                         </svg>
                         <p class="item__description">{{ mask.description }}</p>
-                        <p class="item__hour">{{ mask.hour }}</p>
+                        <p class="item__hour">{{ mask.hour }} часов</p>
                         <input class="item__check" type="checkbox" v-on:change="doCheck(index, 'complete')" checked>
                         <button class="item__button" v-on:click="removeMask(index, 'complete')">Удалить</button>
                     </div>
