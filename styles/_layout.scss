@@ -1,0 +1,49 @@
+@use '_base'as b;
+.header{
+    width: 100%;
+    background: var(--color-secondary);
+
+    &__logo{
+        flex:1;
+    }
+    &__menu{
+        flex:10;
+        ul{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            height: 100%;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            @include b.text;
+            height: 30px;
+            width: 40px;
+            padding: 10px;
+            text-align: center;
+            word-wrap: none;
+        }
+    }
+    &__themeButton{
+        flex:1;
+        height: 20%;
+        align-self: center;
+        @include b.text;
+        background:var(--color-accent);
+        outline: none;
+        border: none;
+        border-radius: 150px;
+    }
+}
+.container{
+    width: 65%;
+    margin: 0 auto;
+    &_header{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+}
