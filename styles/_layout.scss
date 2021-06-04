@@ -51,6 +51,8 @@
         border: none;
         border-radius: 150px;
         padding: 5px 20px;
+        transition-duration: 1s;
+        transition-property: background, color;
 
         &:hover {
             background: var(--color-accent);
@@ -84,4 +86,8 @@
 main {
     width: 100%;
     background: var(--color-primary);
+}
+footer{
+    text-align: center;
+    @include b.text;
 }

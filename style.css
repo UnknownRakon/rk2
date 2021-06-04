@@ -63,6 +63,8 @@
   border: none;
   border-radius: 150px;
   padding: 5px 20px;
+  transition-duration: 1s;
+  transition-property: background, color;
 }
 .header__themeButton:hover {
   background: var(--color-accent);
@@ -91,6 +93,15 @@
 main {
   width: 100%;
   background: var(--color-primary);
+}
+
+footer {
+  text-align: center;
+  font-family: "Brygada 1918", serif;
+  font-style: normal;
+  text-decoration: none;
+  font-weight: normal;
+  color: var(--font-color);
 }
 
 .container_main h1 {
