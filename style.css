@@ -19,6 +19,9 @@
 }
 .header__logo {
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .header__menu {
   flex: 10;
@@ -49,15 +52,16 @@
   flex: 1;
   height: 20%;
   align-self: center;
-  font-family: "Brygada 1918", serif;
-  font-style: normal;
-  text-decoration: none;
-  font-weight: normal;
-  color: var(--font-color);
-  background: var(--color-accent);
+  background: var(--font-color);
+  color: var(--color-primary);
   outline: none;
   border: none;
   border-radius: 150px;
+  padding: 5px 20px;
+}
+.header__themeButton:hover {
+  background: var(--color-accent);
+  color: var(--font-color);
 }
 
 .container {

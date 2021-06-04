@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div id="app">
         <header class="header">
@@ -24,11 +26,34 @@
                         <li><a href="#4">Изученные</a></li>
                     </ul>
                 </nav>
-                <button class="header__themeButton">Сменить тему</button>
+                <button class="header__themeButton" onclick="toggleTheme()">Сменить тему</button>
             </div>
         </header>
     </div>
     <script src="https://unpkg.com/vue@next"></script>
     <script src="app.js"></script>
+    <script>
+        function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+            document.documentElement.className = themeName;
+        }
+        function toggleTheme() {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-light');
+            } else {
+                setTheme('theme-dark');
+            }
+        }
+        (function () {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-dark');
+                document.getElementById('slider').checked = false;
+            } else {
+                setTheme('theme-light');
+                document.getElementById('slider').checked = true;
+            }
+        })();
+    </script>
 </body>
+
 </html>

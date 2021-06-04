@@ -5,6 +5,9 @@
 
     &__logo{
         flex:1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     &__menu{
         flex:10;
@@ -31,11 +34,17 @@
         flex:1;
         height: 20%;
         align-self: center;
-        @include b.text;
-        background:var(--color-accent);
+        background: var(--font-color);
+        color: var(--color-primary);
         outline: none;
         border: none;
         border-radius: 150px;
+        padding: 5px 20px;
+
+        &:hover{
+            background: var(--color-accent);
+            color: var(--font-color);
+        }
     }
 }
 .container{
